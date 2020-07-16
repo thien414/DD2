@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".main.Main3">
+    <TextView
+        android:text="@string/shownv"
+        style="@style/textContent" />
+
+    <ListView
+        android:id="@+id/lvNV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/colorlv"
+        ></ListView>
+    <LinearLayout
+        style="@style/LN_horizontal">
+        <Button
+            android:id="@+id/btnThem_nv"
+            style="@style/btnTable"
+            android:layout_weight="1"
+            android:text="@string/btnThemNV"/>
+        <Button
+            android:id="@+id/btnDSNV_GoIndex"
+            style="@style/btnTable"
+            android:layout_weight="1"
+            android:text="@string/btnIndex"/>
+    </LinearLayout>
+</LinearLayout>

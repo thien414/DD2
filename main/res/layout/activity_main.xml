@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.Main">
+
+    <Button
+        android:id="@+id/btnThemMain1-vpp"
+        style="@style/btnThem"
+        android:text="@string/btnThemVPP" />
+
+    <Button
+        android:id="@+id/btnThemMain1-pb"
+        style="@style/btnThem"
+        android:text="@string/btnThemPB" />
+
+    <Button
+        android:id="@+id/btnThemMain1-nv"
+        style="@style/btnThem"
+        android:text="@string/btnThemNV" />
+
+    <Button
+        android:id="@+id/btnThemMain1-cnvpp"
+        style="@style/btnThem"
+        android:text="@string/btnCapNhatVPP" />
+</LinearLayout>
