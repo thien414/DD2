@@ -90,10 +90,32 @@ public class DBCapNhat {
 
     }
 
+    public ArrayList<CapNhat> TiemKiem(String txt){
+        ArrayList<CapNhat> data = new ArrayList<>();
+        String sql="select * from CNVPP where SoPhieu like '%"+txt+"%' order by ID desc";
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql,null);
+        cursor.moveToFirst();
+        if(cursor.getCount() > 0 && cursor != null){
+            do {
+                CapNhat cn = new CapNhat();
+                cn.setSoPhieu(cursor.getString(1));
+                cn.setNgayCap(cursor.getString(2));
+                cn.setMaVPP(cursor.getString(3));
+                cn.setMaNV(cursor.getString(4));
+                cn.setSoLuong(cursor.getString(5));
+                data.add(cn);
+            }
+            while (cursor.moveToNext());
+        }
+
+        return  data;
+
+    }
 
     public ArrayList<CapNhat> LayDL(){
         ArrayList<CapNhat> data = new ArrayList<>();
-        String sql="select * from NV";
+        String sql="select * from CNVPP  order by ID desc";
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
         cursor.moveToFirst();

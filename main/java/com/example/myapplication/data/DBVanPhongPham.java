@@ -88,10 +88,30 @@ public class DBVanPhongPham {
 
     }
 
+    public ArrayList<VanPhongPham> TiemKiem(String txt){
+        ArrayList<VanPhongPham> data = new ArrayList<>();
+        String sql="select * from VPP where MaVPP like '%" + txt + "%' order by ID desc";
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql,null);
+        cursor.moveToFirst();
+        if(cursor.getCount() > 0 && cursor != null){
+            do {
+                VanPhongPham vpp = new VanPhongPham();
+                vpp.setMaVPP(cursor.getString(1));
+                vpp.setTenVPP(cursor.getString(2));
+                vpp.setdVT(cursor.getString(3));
+                vpp.setGiaNhap(cursor.getString(4));
+                data.add(vpp);
+            }
+            while (cursor.moveToNext());
+        }
+        return  data;
+    }
+
 
     public ArrayList<VanPhongPham> LayDL(){
         ArrayList<VanPhongPham> data = new ArrayList<>();
-        String sql="select * from VPP";
+        String sql="select * from VPP order by ID desc";
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
         cursor.moveToFirst();

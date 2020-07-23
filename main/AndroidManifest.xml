@@ -16,9 +16,9 @@
         <activity android:name=".model.MainThemNV" />
         <activity android:name=".model.MainThemPB" />
         <activity android:name=".model.MainThemVPP" />
-        <activity android:name=".model.MainShow" />
+        <activity android:name=".main.Main" />
         <activity android:name=".main.Main1" />
-        <activity android:name=".main.Main">
+        <activity android:name=".main.MainShow">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

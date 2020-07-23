@@ -7,9 +7,4 @@
         android:icon="@drawable/ic_vietnam"
         android:id="@+id/mnLang"
         />
-    <item
-        android:title="@string/mnExit"
-        app:showAsAction="ifRoom"
-        android:id="@+id/mnExit"
-        android:icon="@drawable/ic_exit_to_app_black_24dp"/>
 </menu>

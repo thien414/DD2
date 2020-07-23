@@ -35,12 +35,12 @@ public class CustomAdapterCNVPP extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = LayoutInflater.from(context).inflate(resource,null);
 
-        ImageView imgCN = view.findViewById(R.id.imgVPP);
-        TextView tvSoPhieu = view.findViewById(R.id.tvMaVPP);
-        TextView tvNgayCap = view.findViewById(R.id.tvTenVPP);
-        TextView tvMaVPP = view.findViewById(R.id.tvDvtVPP);
-        TextView tvMaNV = view.findViewById(R.id.tvGnVPP);
-        TextView tvSoLuong = view.findViewById(R.id.tvGnVPP);
+        ImageView imgCN = view.findViewById(R.id.imgCnVPP);
+        TextView tvSoPhieu = view.findViewById(R.id.tvSoPhieuVPP);
+        TextView tvNgayCap = view.findViewById(R.id.tvNgCVPP);
+        TextView tvMaVPP = view.findViewById(R.id.tvMaVPP_VPP);
+        TextView tvMaNV = view.findViewById(R.id.tvMaNV_VPP);
+        TextView tvSoLuong = view.findViewById(R.id.tvSoLuongCnVPP);
 
         CapNhat cnvpp = data.get(position);
         imgCN.setImageResource(R.drawable.ic_vietnam);

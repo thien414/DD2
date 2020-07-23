@@ -48,4 +48,10 @@
     <string name="nhapMaNV">Nhập vào mã nhân viên</string>
     <string name="nhapSopVPP">Nhập vào số phiếu</string>
     <string name="shownv">Danh Sách Nhân Viên</string>
+    <string name="edttk">Nhập vào mã cần tìm</string>
+    <string name="edttkvpp">Nhập vào số phiếu cần tìm</string>
+    <string name="btnVPP">Văn phòng phẩm</string>
+    <string name="btnPB">Phòng ban</string>
+    <string name="btnNV">Nhân viên</string>
+    <string name="btnCapNhat">Cập nhật</string>
 </resources>

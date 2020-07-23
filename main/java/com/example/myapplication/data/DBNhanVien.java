@@ -86,10 +86,31 @@ public class DBNhanVien {
 
     }
 
+    public ArrayList<NhanVien> TiemKiem(String txt){
+        ArrayList<NhanVien> data = new ArrayList<>();
+        String sql="select * from NV where MaNV like '%"+txt+"%' order by ID desc";
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql,null);
+        cursor.moveToFirst();
+        if(cursor.getCount() > 0 && cursor != null){
+            do {
+                NhanVien nv = new NhanVien();
+                nv.setMaNV(cursor.getString(1));
+                nv.setHoTenNV(cursor.getString(2));
+                nv.setNgaySinh(cursor.getString(3));
+                nv.setMaPB(cursor.getString(4));
+                data.add(nv);
+            }
+            while (cursor.moveToNext());
+        }
+
+        return  data;
+
+    }
 
     public ArrayList<NhanVien> LayDL(){
         ArrayList<NhanVien> data = new ArrayList<>();
-        String sql="select * from NV";
+        String sql="select * from NV  order by ID desc";
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
         cursor.moveToFirst();

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,9 +21,11 @@ import com.example.myapplication.model.MainThemNV;
 
 public class Main3 extends AppCompatActivity {
 
+    boolean check = false;
     DBNhanVien dbNhanVien;
     CustomAdapterNV adapterNV;
-    Button btnThem, btnIndex;
+    Button btnThem, btnIndex, btnTK;
+    EditText edtTK;
     ListView lvShow;
 
     @Override
@@ -51,18 +54,36 @@ public class Main3 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnTK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tk();
+                check = true;
+            }
+        });
 
         lvShow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                NhanVien nv = dbNhanVien.LayDL().get(position);
-                String sp = nv.getMaNV() + "-" + nv.getHoTenNV() + "-" + nv.getNgaySinh() + "-" + nv.getMaPB();
-                Intent intent = new Intent(Main3.this, MainThemNV.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("index", sp);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                if(check){
+                    NhanVien nv = dbNhanVien.TiemKiem(edtTK.getText().toString()).get(position);
+                    String sp = nv.getMaNV() + "-" + nv.getHoTenNV() + "-" + nv.getNgaySinh() + "-" + nv.getMaPB();
+                    Intent intent = new Intent(Main3.this, MainThemNV.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("index", sp);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
+                else {
+                    NhanVien nv = dbNhanVien.LayDL().get(position);
+                    String sp = nv.getMaNV() + "-" + nv.getHoTenNV() + "-" + nv.getNgaySinh() + "-" + nv.getMaPB();
+                    Intent intent = new Intent(Main3.this, MainThemNV.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("index", sp);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -70,33 +91,66 @@ public class Main3 extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Main3.this);
-                builder.setTitle("Thông báo");
-                builder.setMessage("Bạn có chắc chắn muốn xóa ?");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (dbNhanVien.Xoa(dbNhanVien.LayDL().get(position)) != 0) {
-                            Toast.makeText(getApplication(), "Xóa thành công", Toast.LENGTH_LONG).show();
-                            LoadData();
-                        } else {
-                            Toast.makeText(getApplication(), "Xóa không thành công", Toast.LENGTH_LONG).show();
+                if(check){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Main3.this);
+                    builder.setTitle("Thông báo");
+                    builder.setMessage("Bạn có chắc chắn muốn xóa ?");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (dbNhanVien.Xoa(dbNhanVien.TiemKiem(edtTK.getText().toString()).get(position)) != 0) {
+                                Toast.makeText(getApplication(), "Xóa thành công", Toast.LENGTH_LONG).show();
+                                tk();
+                            } else {
+                                Toast.makeText(getApplication(), "Xóa không thành công", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Main3.this);
+                    builder.setTitle("Thông báo");
+                    builder.setMessage("Bạn có chắc chắn muốn xóa ?");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (dbNhanVien.Xoa(dbNhanVien.LayDL().get(position)) != 0) {
+                                Toast.makeText(getApplication(), "Xóa thành công", Toast.LENGTH_LONG).show();
+                                LoadData();
+                            } else {
+                                Toast.makeText(getApplication(), "Xóa không thành công", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+                }
 
                 return false;
             }
         });
     }
+
+    private void tk() {
+        dbNhanVien = new DBNhanVien(this);
+        adapterNV = new CustomAdapterNV(this, R.layout.show_nv, dbNhanVien.TiemKiem(edtTK.getText().toString()));
+        lvShow.setAdapter(adapterNV);
+    }
+
 
     private void LoadData() {
         dbNhanVien = new DBNhanVien(this);
@@ -105,6 +159,8 @@ public class Main3 extends AppCompatActivity {
     }
 
     private void setControl() {
+        btnTK = findViewById(R.id.btnTKNV);
+        edtTK = findViewById(R.id.edtTKNV);
         btnThem = findViewById(R.id.btnThem_nv);
         btnIndex = findViewById(R.id.btnDSNV_GoIndex);
         lvShow = findViewById(R.id.lvNV);

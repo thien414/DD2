@@ -77,26 +77,6 @@ public class Main extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
         {
-            case R.id.mnExit:
-                AlertDialog.Builder builder = new AlertDialog.Builder(Main.this);
-                builder.setTitle("Thông Báo");
-                builder.setMessage("Bạn có muốn thoát???");
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        finish();
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                AlertDialog dialog = builder.create();
-                dialog.show();
-                break;
             case R.id.mnLang:
                 if(lang)
                 {

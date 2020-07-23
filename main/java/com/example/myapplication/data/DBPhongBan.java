@@ -83,10 +83,30 @@ public class DBPhongBan {
 
     }
 
+    public ArrayList<PhongBan> TimKiem(String txt){
+        ArrayList<PhongBan> data = new ArrayList<>();
+        String sql="select * from PB where MaPB like '%"+txt+"%' order by ID desc";
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery(sql,null);
+        cursor.moveToFirst();
+        if(cursor.getCount() > 0 && cursor != null){
+            do {
+                PhongBan pb = new PhongBan();
+                pb.setMaPB(cursor.getString(1));
+                pb.setTenPB(cursor.getString(2));
+                data.add(pb);
+            }
+            while (cursor.moveToNext());
+        }
+
+        return  data;
+
+    }
+
 
     public ArrayList<PhongBan> LayDL(){
         ArrayList<PhongBan> data = new ArrayList<>();
-        String sql="select * from PB";
+        String sql="select * from PB order by ID desc";
         db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql,null);
         cursor.moveToFirst();
