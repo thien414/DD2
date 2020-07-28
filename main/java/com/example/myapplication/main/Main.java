@@ -1,16 +1,18 @@
 package com.example.myapplication.main;
 
+import androidx.annotation.AnimRes;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.myapplication.R;
 
@@ -19,6 +21,7 @@ public class Main extends AppCompatActivity {
 
 
     Button btnVPP, btnPB, btnNV, btnCNVPP;
+    ImageView imIcon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,14 @@ public class Main extends AppCompatActivity {
     }
 
     private void setEvent() {
+        setIcon(R.anim.imgstart);
+
+        imIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setIcon(R.anim.imgclick);
+            }
+        });
         btnVPP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,11 +70,17 @@ public class Main extends AppCompatActivity {
         });
     }
 
+    private void setIcon(@AnimRes int id) {
+        Animation animation = AnimationUtils.loadAnimation(Main.this,id);
+        imIcon.startAnimation(animation);
+    }
+
     private void setControl() {
         btnCNVPP = findViewById(R.id.btnThemMain1_cnvpp);
         btnNV = findViewById(R.id.btnThemMain1_nv);
         btnPB = findViewById(R.id.btnThemMain1_pb);
         btnVPP = findViewById(R.id.btnThemMain1_vpp);
+        imIcon = findViewById(R.id.imgIcon);
     }
 
 

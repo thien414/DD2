@@ -9,6 +9,7 @@
     tools:context=".main.Main">
 
     <ImageView
+        android:id="@+id/imgIcon"
         android:layout_margin="@dimen/maginImg"
         android:src="@mipmap/ic_launcher"
         android:layout_width="1in"
