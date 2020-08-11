@@ -12,6 +12,7 @@
         <activity android:name=".main.Main4" />
         <activity android:name=".main.Main3" />
         <activity android:name=".main.Main2" />
+        <activity android:name=".main.PieChartActivity" />
         <activity android:name=".model.MainCapnhatVPP" />
         <activity android:name=".model.MainThemNV" />
         <activity android:name=".model.MainThemPB" />

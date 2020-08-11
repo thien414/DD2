@@ -90,7 +90,7 @@ public class Main extends AppCompatActivity {
         btnVPP = findViewById(R.id.btnThemMain1_vpp);
         imIcon = findViewById(R.id.imgIcon);
     }
-    
+
 
     private void onChangLanguage(Locale locale) {
         DisplayMetrics displayMetrics = getBaseContext().getResources().getDisplayMetrics();

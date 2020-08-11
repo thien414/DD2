@@ -54,4 +54,5 @@
 <string name="btnPB">Phòng ban</string>
 <string name="btnNV">Nhân viên</string>
 <string name="btnCapNhat">Cập nhật</string>
+    <string name="btnThongKe">Thống Kê</string>
 </resources>

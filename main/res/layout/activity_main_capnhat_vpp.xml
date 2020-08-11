@@ -96,8 +96,7 @@
 
     <LinearLayout
         style="@style/LN_horizontal"
-        android:gravity="center"
-        android:padding="100px">
+        android:gravity="center">
 
         <Button
             android:id="@+id/btnThemCnVPP"

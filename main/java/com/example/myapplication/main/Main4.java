@@ -28,7 +28,7 @@ public class Main4 extends AppCompatActivity {
     boolean check = false;
     DBCapNhat dbCapNhat;
     CustomAdapterCNVPP adapterCNVPP;
-    Button btnThem, btnIndex, btnTK;
+    Button btnThem, btnIndex, btnTK, btnThK;
     EditText edtTK;
     ListView lvShow;
     @Override
@@ -62,6 +62,13 @@ public class Main4 extends AppCompatActivity {
             public void onClick(View v) {
                 tk();
                 check = true;
+            }
+        });
+        btnThK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PieChartActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -166,5 +173,6 @@ public class Main4 extends AppCompatActivity {
         btnThem = findViewById(R.id.btnThem_cnvpp);
         btnIndex = findViewById(R.id.btnDSCNVPP_GoIndex);
         lvShow = findViewById(R.id.lvCNVPP);
+        btnThK = findViewById(R.id.btnThongKeCNVPP);
     }
 }
