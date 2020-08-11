@@ -29,7 +29,8 @@
             android:layout_marginLeft="@dimen/maginMain"
             android:layout_marginRight="@dimen/maginMain"
             android:layout_weight="1"
-            android:text="@string/btnVPP" />
+            android:text="@string/btnVPP"
+            android:textColor="@color/colortrang"/>
 
         <Button
             android:id="@+id/btnThemMain1-pb"
@@ -37,7 +38,8 @@
             android:layout_marginLeft="@dimen/maginMain"
             android:layout_marginRight="@dimen/maginMain"
             android:layout_weight="1"
-            android:text="@string/btnPB" />
+            android:text="@string/btnPB"
+            android:textColor="@color/colortrang"/>
 
     </LinearLayout>
 
@@ -50,13 +52,15 @@
             style="@style/btnThem"
             android:layout_margin="@dimen/maginMain"
             android:layout_weight="1"
-            android:text="@string/btnNV" />
+            android:text="@string/btnNV"
+            android:textColor="@color/colortrang"/>
 
         <Button
             android:id="@+id/btnThemMain1-cnvpp"
             style="@style/btnThem"
             android:layout_margin="@dimen/maginMain"
             android:layout_weight="1"
-            android:text="@string/btnCapNhat" />
+            android:text="@string/btnCapNhat"
+            android:textColor="@color/colortrang"/>
     </LinearLayout>
 </LinearLayout>

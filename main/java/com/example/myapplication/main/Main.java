@@ -5,7 +5,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +19,17 @@ import android.widget.ImageView;
 
 import com.example.myapplication.R;
 
+import java.util.Locale;
+
 public class Main extends AppCompatActivity {
-    boolean lang = true;
 
 
     Button btnVPP, btnPB, btnNV, btnCNVPP;
     ImageView imIcon;
+    Locale mMyLocale;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,16 +103,29 @@ public class Main extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.mnLang:
-                if(lang)
-                {
-                    item.setIcon(R.drawable.ic_usa_today);
-                }
-                else{
-                    item.setIcon(R.drawable.ic_vietnam);
-                }
-                lang = !lang;
+                mMyLocale = new Locale("vi", "VN");
+                break;
+            case R.id.mnLang1:
+                mMyLocale = new Locale("en", "US");
                 break;
         }
+        onChangLanguage(mMyLocale);
         return super.onOptionsItemSelected(item);
+    }
+
+    private void onChangLanguage(Locale locale) {
+        DisplayMetrics displayMetrics = getBaseContext().getResources().getDisplayMetrics();
+        Configuration configuration = new Configuration();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            configuration.setLocale(locale);
+        } else {
+            configuration.locale = locale;
+        }
+        getBaseContext().getResources().updateConfiguration(configuration, displayMetrics);
+        Intent intent = new Intent(Main.this, Main.class);
+        startActivity(intent);
+        finish();
+
     }
 }

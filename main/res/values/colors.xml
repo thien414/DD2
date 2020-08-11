@@ -7,5 +7,9 @@
     <color name="colorlistview">#8BC34A</color>
     <color name="coloradd">#000000</color>
     <color name="colorcontent">#FFEB3B</color>
+    <color name="colorxanh">#1E90FF</color>
+    <color name="colortrang">#F5FFFA</color>
+
+
 
 </resources>

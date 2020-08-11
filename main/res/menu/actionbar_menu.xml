@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:title="@string/mnLang"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_vietnam"
+        >
+    </item>
+    <item
+        android:title="Việt Nam"
         android:id="@+id/mnLang"
+        />
+    <item
+        android:title="Us"
+        android:id="@+id/mnLang1"
         />
 </menu>
