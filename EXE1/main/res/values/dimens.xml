@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textTileSize">30dp</dimen>
+    <dimen name="textContentSize">25dp</dimen>
+    <dimen name="imgDelete">60dp</dimen>
+    <dimen name="maginBtn">20dp</dimen>
+    <dimen name="maginMain">12dp</dimen>
+    <dimen name="maginImg">15dp</dimen>
+    <dimen name="padingBtn">10dp</dimen>
+    <dimen name="sizesolid">5dp</dimen>
+    <dimen name="sizeRadius">5dp</dimen>
+</resources>

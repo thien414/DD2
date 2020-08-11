@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".model.MainThemVPP">
+
+    <TextView
+        android:text="@string/nhapVPP"
+        style="@style/textTile" />
+
+    <TextView
+        android:text="@string/thongtin"
+        style="@style/textContent"/>
+
+    <LinearLayout
+        style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/maVPP"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtMaVPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhapmaVPP" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tenVPP"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtTenVPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhaptenVPP" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dvtVPP"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtDvtVPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhapdvtVPP" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gnVPP"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtGnVPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhapgnVPP" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/chucnang"
+        style="@style/textContent"/>
+
+    <LinearLayout
+        style="@style/LN_horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnThemVPP"
+            style="@style/btnThem" />
+
+        <Button
+            android:id="@+id/btnXoaVPP"
+            style="@style/btnXoa"/>
+
+        <Button
+            android:id="@+id/btnSuaVPP"
+            style="@style/btnSua" />
+
+        <Button
+            android:id="@+id/btnClearVPP"
+            style="@style/btnClear" />
+    </LinearLayout>
+
+
+</LinearLayout>

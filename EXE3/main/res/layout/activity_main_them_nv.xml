@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".model.MainThemNV">
+
+    <TextView
+        style="@style/textTile"
+        android:text="@string/nhapNV" />
+
+    <TextView
+        style="@style/textContent"
+        android:text="@string/thongtin" />
+
+    <LinearLayout style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/maNV"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtMaNV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhapMaNV" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tenNV"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edttenNV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhaptenNV" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/NgSinhNV"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtNgSinhNV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhapNgSinhNV" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/maPB"
+            android:textColor="@color/coloradd" />
+
+        <Spinner
+            android:id="@+id/spMaPB_NV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"></Spinner>
+    </LinearLayout>
+
+    <TextView
+        style="@style/textContent"
+        android:text="@string/chucnang" />
+
+    <LinearLayout
+        style="@style/LN_horizontal"
+        android:gravity="center"
+        android:paddingLeft="@dimen/maginMain">
+
+        <Button
+            android:id="@+id/btnThemNV"
+            style="@style/btnThem" />
+
+        <Button
+            android:id="@+id/btnXoaNV"
+            style="@style/btnXoa" />
+
+        <Button
+            android:id="@+id/btnSuaNV"
+            style="@style/btnSua" />
+
+        <Button
+            android:id="@+id/btnClearNV"
+            style="@style/btnClear" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -8,8 +8,10 @@
     tools:context=".PieChartActivity">
 
     <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/pieChart"></com.github.mikephil.charting.charts.PieChart>
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="9dp"></com.github.mikephil.charting.charts.PieChart>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

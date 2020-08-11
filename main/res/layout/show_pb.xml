@@ -6,13 +6,14 @@
         android:id="@+id/imgPB"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_margin="10dp"
         android:src="@drawable/ic_vietnam" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/colorlistview"
+        android:background="@color/nen"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="10dp">
@@ -30,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:paddingLeft="70dp"
                 android:text="PB - 1"
                 android:textColor="@color/colorAccent" />
         </LinearLayout>
@@ -48,14 +49,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:paddingLeft="66dp"
                 android:text="test"
                 android:textColor="@color/colorAccent" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imgDeletePB"
-        style="@style/lvDelete" />
 </LinearLayout>

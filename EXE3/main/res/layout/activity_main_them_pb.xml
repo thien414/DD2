@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".model.MainThemPB">
+
+    <TextView
+        style="@style/textTile"
+        android:text="@string/nhapPB" />
+
+    <TextView
+        style="@style/textContent"
+        android:text="@string/thongtin" />
+
+    <LinearLayout style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/maPB"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtMaPB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhapMaPB" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/LN_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tenPB"
+            android:textColor="@color/coloradd" />
+
+        <EditText
+            android:id="@+id/edtTenPB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nhaptenPB" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/textContent"
+        android:text="@string/chucnang" />
+
+    <LinearLayout
+        style="@style/LN_horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnThemPB"
+            style="@style/btnThem" />
+
+        <Button
+            android:id="@+id/btnXoaPB"
+            style="@style/btnXoa" />
+
+        <Button
+            android:id="@+id/btnSuaPB"
+            style="@style/btnSua" />
+
+        <Button
+            android:id="@+id/btnClearPB"
+            style="@style/btnClear" />
+    </LinearLayout>
+
+
+</LinearLayout>

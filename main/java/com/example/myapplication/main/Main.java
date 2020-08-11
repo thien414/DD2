@@ -90,8 +90,25 @@ public class Main extends AppCompatActivity {
         btnVPP = findViewById(R.id.btnThemMain1_vpp);
         imIcon = findViewById(R.id.imgIcon);
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.mnLang:
+                mMyLocale = new Locale("vi", "VN");
+                break;
+            case R.id.mnLang1:
+                mMyLocale = new Locale("en", "US");
+                break;
+        }
+        onChangLanguage(mMyLocale);
+        return super.onOptionsItemSelected(item);
+    }
     private void onChangLanguage(Locale locale) {
         DisplayMetrics displayMetrics = getBaseContext().getResources().getDisplayMetrics();
         Configuration configuration = new Configuration();

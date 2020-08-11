@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/nenmain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.Main">
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_margin="@dimen/maginImg"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="1in"
+        android:layout_height="1in" />
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnThemMain1-vpp"
+            style="@style/btnThem"
+            android:layout_marginLeft="@dimen/maginMain"
+            android:layout_marginRight="@dimen/maginMain"
+            android:layout_weight="1"
+            android:text="@string/btnVPP"
+            android:textColor="@color/colortrang"/>
+
+        <Button
+            android:id="@+id/btnThemMain1-pb"
+            style="@style/btnThem"
+            android:layout_marginLeft="@dimen/maginMain"
+            android:layout_marginRight="@dimen/maginMain"
+            android:layout_weight="1"
+            android:text="@string/btnPB"
+            android:textColor="@color/colortrang"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnThemMain1-nv"
+            style="@style/btnThem"
+            android:layout_margin="@dimen/maginMain"
+            android:layout_weight="1"
+            android:text="@string/btnNV"
+            android:textColor="@color/colortrang"/>
+
+        <Button
+            android:id="@+id/btnThemMain1-cnvpp"
+            style="@style/btnThem"
+            android:layout_margin="@dimen/maginMain"
+            android:layout_weight="1"
+            android:text="@string/btnCapNhat"
+            android:textColor="@color/colortrang"/>
+    </LinearLayout>
+</LinearLayout>

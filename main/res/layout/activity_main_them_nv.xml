@@ -82,7 +82,7 @@
     <LinearLayout
         style="@style/LN_horizontal"
         android:gravity="center"
-        android:paddingLeft="@dimen/maginMain">
+        android:padding="10dp">
 
         <Button
             android:id="@+id/btnThemNV"
